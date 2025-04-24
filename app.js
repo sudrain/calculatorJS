@@ -1,8 +1,3 @@
-let num1 = 0;
-let num2 = 0;
-let operator = '';
-let inputStatus = false;
-
 const operators = document.querySelectorAll('.operator');
 const numbers = document.querySelectorAll('.num');
 const dot = document.querySelector('#dot');
@@ -10,6 +5,12 @@ const equal = document.querySelector('#equal');
 const clear = document.querySelector('#clear');
 const tablo = document.querySelector('#tablo');
 
+let num1 = 0;
+let num2 = 0;
+let operator = '';
+let inputStatus = false;
+
+// ************************** listener *********************************
 operators.forEach(
     (o) => {
         o.addEventListener('click', (e) => { input(e.target.textContent); });
@@ -29,47 +30,12 @@ dot.addEventListener('click', () => {
     addToTablo('.');
 })
 
-equal.addEventListener('click', () => {
-    toEqual();
-});
+equal.addEventListener('click', () => { toEqual() });
 
 clear.addEventListener('click', () => { clearAll() });
 
-function input(newOperator) {
-    if (operator.length > 0) {
-        num2 = tablo.textContent;
-        num1 = operate(num1, operator, num2);
-        operator = newOperator;
-        num2 = 0;
-        clearTablo();
-        addToTablo(num1);
-    } else {
-        num1 = tablo.textContent;
-        operator = newOperator;
-    }
-    inputStatus = false;
-}
-
-function toEqual() {
-    if (operator === '') {
-        return false;
-    }
-    num2 = tablo.textContent;
-    clearTablo();
-    addToTablo(operate(num1, operator, num2));
-    clearNumber();
-    clearOperator();
-    inputStatus = false;
-}
-
-function clearAll() {
-    setZero();
-    clearNumber();
-    clearOperator();
-}
-
+// ************************** functions *********************************
 function addToTablo(simbol) {
-    let tablo = document.querySelector('#tablo');
     tablo.textContent += (simbol);
 }
 
@@ -105,4 +71,37 @@ function operate(num1, operator, num2) {
         case '/':
             return parseFloat(num1) / parseFloat(num2);
     }
+}
+
+function input(newOperator) {
+    if (operator.length > 0) {
+        num2 = tablo.textContent;
+        num1 = operate(num1, operator, num2);
+        operator = newOperator;
+        num2 = 0;
+        clearTablo();
+        addToTablo(num1);
+    } else {
+        num1 = tablo.textContent;
+        operator = newOperator;
+    }
+    inputStatus = false;
+}
+
+function toEqual() {
+    if (operator === '') {
+        return false;
+    }
+    num2 = tablo.textContent;
+    clearTablo();
+    addToTablo(operate(num1, operator, num2));
+    clearNumber();
+    clearOperator();
+    inputStatus = false;
+}
+
+function clearAll() {
+    setZero();
+    clearNumber();
+    clearOperator();
 }

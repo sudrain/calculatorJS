@@ -11,6 +11,25 @@ body {
     align-items: center;
 }
 
+button {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 10px;
+    background-color: rgb(164, 164, 176);
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+}
+
+.zero {
+    flex: 2;
+    padding: 2px;
+    font-size: large;
+}
+
 #mainFrame {
     margin: 124px;
     display: flex;
@@ -42,23 +61,4 @@ body {
 #header {
     font-size: 32px;
 
-}
-
-.row {
-    display: flex;
-    flex: 1;
-    align-self: stretch;
-}
-
-button {
-    align-self: stretch;
-    flex: 1;
-    border-radius: 10px;
-    background-color: rgb(164, 164, 176);
-}
-
-.zero {
-    flex: 2;
-    padding: 2px;
-    font-size: large;
 }
