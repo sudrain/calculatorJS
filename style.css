@@ -53,4 +53,12 @@ body {
 button {
     align-self: stretch;
     flex: 1;
+    border-radius: 10px;
+    background-color: rgb(164, 164, 176);
+}
+
+.zero {
+    flex: 2;
+    padding: 2px;
+    font-size: large;
 }
