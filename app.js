@@ -24,6 +24,11 @@ numbers.forEach(
         })
     });
 
+dot.addEventListener('click', () => {
+    inputStatus = true;
+    addToTablo('.');
+})
+
 equal.addEventListener('click', () => {
     toEqual();
 });
