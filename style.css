@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainFrame {
+    margin: 124px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(82, 78, 78);
+    border: 5px solid rgb(48, 37, 37);
+}
+
+#tablo {
+    align-self: stretch;
+    flex: 0 0 15%;
+    border: 5px solid rgb(48, 37, 37);
+    margin: 5px 5px;
+    background-color: rgb(161, 149, 149);
+    text-align: end;
+    font-size: 32px;
+    align-content: center;
+    padding: 5px;
+}
+
+#operations {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#header {
+    font-size: 32px;
+
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+}
+
+button {
+    align-self: stretch;
+    flex: 1;
+}
