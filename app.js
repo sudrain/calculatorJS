@@ -10,7 +10,7 @@ let num2 = 0;
 let operator = '';
 let inputStatus = false;
 
-// ************************** listener *********************************
+// ************************** listeners *********************************
 operators.forEach(
     (o) => {
         o.addEventListener('click', (e) => { input(e.target.textContent); });
